@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
+import appInitialize from "./Firebase/firebase.init";
+
+appInitialize();
 
 function App() {
     return (
