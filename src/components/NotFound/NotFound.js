@@ -3,10 +3,9 @@ const NotFound = () => {
     return (
         <div>
             <img
-                src="https://i.ibb.co/S548sPv/404-Error-Page-not-Found-with-people-connecting-a-plug-pana.png"
+                src="https://i.ibb.co/xJtbjQ1/2417237.jpg"
                 alt=""
                 className="w-100"
-                height="600px"
             />
         </div>
     );
