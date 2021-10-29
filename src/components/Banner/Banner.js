@@ -6,7 +6,7 @@ const Banner = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="https://i.ibb.co/KNQbCms/wepik-2021929-234031.jpg"
+                    src="https://i.ibb.co/VMrkw2T/antonio-grosz-OIzy-Uubqr-E-unsplash.jpg"
                     alt="First slide"
                     height="600"
                 />
@@ -23,7 +23,7 @@ const Banner = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="https://i.ibb.co/SyxK1mN/wepik-2021929-23499.jpg"
+                    src="https://i.ibb.co/C2J0f9h/daniel-leone-g30-P1zc-Oz-Xo-unsplash.jpg"
                     alt="Second slide"
                     height="600"
                 />
@@ -38,7 +38,7 @@ const Banner = () => {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="https://i.ibb.co/rbXqVzv/wepik-2021929-235055.jpg"
+                    src="https://i.ibb.co/JQmf7CQ/bailey-zindel-NRQV-h-BF10-M-unsplash.jpg"
                     alt="Third slide"
                     height="600"
                 />

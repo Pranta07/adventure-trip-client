@@ -1,0 +1,21 @@
+.tour-place {
+    position: relative;
+}
+
+.tour-desc {
+    position: absolute;
+    top: 50px;
+    left: 24px;
+}
+
+.book-now-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+}
+
+.tour-img:hover img {
+    transform: scale(1.02);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
