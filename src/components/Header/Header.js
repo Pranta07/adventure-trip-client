@@ -13,14 +13,14 @@ const Header = () => {
                 <Navbar.Brand as={Link} to="/home">
                     <img
                         alt=""
-                        src="https://i.ibb.co/YZy67G1/adventure-vintage-logo-vector-21209180.jpg"
+                        src="https://i.ibb.co/WFshhXh/adventure-vintage-logo-vector-21209180.jpg"
                         className="align-top d-inline-block"
                     />
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                <Navbar.Collapse id="responsive-navbar-nav">
+                <Navbar.Collapse id="responsive-navbar-nav" className="navbar">
                     <Nav className="me-auto align-items-center">
                         <Nav.Link as={NavLink} to="/home">
                             Home
