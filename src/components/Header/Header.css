@@ -1,11 +1,11 @@
 .navbar a {
     color: black !important;
     font-weight: 600;
-    border-bottom: 2px transparent white;
+    border-bottom: 2px hidden !important;
 }
 .navbar a:hover {
     color: rgb(255, 255, 255) !important;
     font-weight: 700;
-    transition: 0.2s ease-in-out;
+    transition: 0.26s ease-in-out;
     border-bottom: 2px solid white !important;
 }

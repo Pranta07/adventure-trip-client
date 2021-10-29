@@ -8,7 +8,13 @@ const Header = () => {
     // console.log(user);
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
+        <Navbar
+            collapseOnSelect
+            expand="lg"
+            bg="warning"
+            variant="dark"
+            className="navbar"
+        >
             <Container>
                 <Navbar.Brand as={Link} to="/home">
                     <img
@@ -20,7 +26,7 @@ const Header = () => {
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-                <Navbar.Collapse id="responsive-navbar-nav" className="navbar">
+                <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto align-items-center">
                         <Nav.Link as={NavLink} to="/home">
                             Home
@@ -40,9 +46,6 @@ const Header = () => {
                                 Add Tour Place
                             </Nav.Link>
                         )}
-                        <Nav.Link as={NavLink} to="/about">
-                            About Us
-                        </Nav.Link>
                         {user.email && (
                             <Navbar.Text>
                                 <span className="text-white">

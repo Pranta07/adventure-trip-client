@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Container } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 const Banner = () => {
     return (
         <Carousel interval={4000} fade>
@@ -11,7 +11,9 @@ const Banner = () => {
                     height="600"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
+                    <h3 className="text-warning fs-1 fw-bold">
+                        Mountains Adventures
+                    </h3>
                     <p>
                         Nulla vitae elit libero, a pharetra augue mollis
                         interdum.
@@ -26,7 +28,7 @@ const Banner = () => {
                     height="600"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
+                    <h3 className="text-warning fs-1 fw-bold">Second label</h3>
                     <p>
                         Nulla vitae elit libero, a pharetra augue mollis
                         interdum.
@@ -41,7 +43,9 @@ const Banner = () => {
                     height="600"
                 />
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h3 className="text-warning fs-1 fw-bold">
+                        Third slide label
+                    </h3>
                     <p>
                         Nulla vitae elit libero, a pharetra augue mollis
                         interdum.

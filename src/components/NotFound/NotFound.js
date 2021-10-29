@@ -1,9 +1,13 @@
 import React from "react";
-
 const NotFound = () => {
     return (
         <div>
-            <h2>404! Page not found!</h2>
+            <img
+                src="https://i.ibb.co/S548sPv/404-Error-Page-not-Found-with-people-connecting-a-plug-pana.png"
+                alt=""
+                className="w-100"
+                height="600px"
+            />
         </div>
     );
 };
