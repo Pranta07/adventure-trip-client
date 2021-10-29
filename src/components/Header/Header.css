@@ -1,0 +1,10 @@
+a {
+    color: black !important;
+    font-weight: 600;
+    border-bottom: 2px;
+}
+a:hover {
+    color: rgb(255, 255, 255) !important;
+    font-weight: 600;
+    border-bottom: 2px solid white !important;
+}

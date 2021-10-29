@@ -36,14 +36,14 @@ const Register = () => {
             <Col className="d-flex justify-content-center order-1 order-sm-0">
                 <div className="p-5 rounded shadow bg-light">
                     <div className="p-2 mb-3 text-center text-white fs-1">
-                        <span className="p-3 rounded-circle alert-primary">
+                        <span className="p-3 rounded-circle bg-warning">
                             <FontAwesomeIcon icon={faUser} />
                         </span>
                     </div>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <InputGroup className="mb-3">
-                            <InputGroup.Text className="border-0 bg-light">
+                            <InputGroup.Text className="border-0 bg-light text-warning">
                                 <FontAwesomeIcon icon={faUserAlt} />
                             </InputGroup.Text>
                             <input
@@ -56,7 +56,7 @@ const Register = () => {
                         </InputGroup>
 
                         <InputGroup className="mb-3">
-                            <InputGroup.Text className="border-0 bg-light">
+                            <InputGroup.Text className="border-0 bg-light text-warning">
                                 <FontAwesomeIcon icon={faUserAlt} />
                             </InputGroup.Text>
                             <input
@@ -77,7 +77,7 @@ const Register = () => {
                         )}
 
                         <InputGroup className="mb-3">
-                            <InputGroup.Text className="border-0 bg-light">
+                            <InputGroup.Text className="border-0 bg-light text-warning">
                                 <FontAwesomeIcon icon={faLock} />
                             </InputGroup.Text>
                             <input
@@ -108,7 +108,7 @@ const Register = () => {
                             <input
                                 type="submit"
                                 value="Register"
-                                className="px-5 btn btn-primary"
+                                className="px-5 btn btn-warning text-white"
                             />
                         </div>
                     </form>
@@ -133,7 +133,11 @@ const Register = () => {
             </Col>
             <Col xs={12} md={6} className="order-0 order-sm-1">
                 <div>
-                    <img src="" alt="" className="w-100" />
+                    <img
+                        src="https://i.ibb.co/7Cn6fDQ/Sign-in-pana.png"
+                        alt=""
+                        className="w-100"
+                    />
                 </div>
             </Col>
         </Row>

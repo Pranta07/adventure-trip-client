@@ -43,13 +43,13 @@ const Login = () => {
             >
                 <div className="p-5 rounded shadow bg-light">
                     <div className="p-2 mb-3 text-center text-white fs-1">
-                        <span className="p-3 rounded-circle alert-primary">
+                        <span className="p-3 rounded-circle bg-warning">
                             <FontAwesomeIcon icon={faUser} />
                         </span>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <InputGroup className="mb-3">
-                            <InputGroup.Text className="border-0 bg-light">
+                            <InputGroup.Text className="border-0 bg-light text-warning">
                                 <FontAwesomeIcon icon={faUserAlt} />
                             </InputGroup.Text>
                             <input
@@ -66,7 +66,7 @@ const Login = () => {
                             </span>
                         )}
                         <InputGroup className="mb-3">
-                            <InputGroup.Text className="border-0 bg-light">
+                            <InputGroup.Text className="border-0 bg-light text-warning">
                                 <FontAwesomeIcon icon={faLock} />
                             </InputGroup.Text>
                             <input
@@ -92,7 +92,7 @@ const Login = () => {
                         </p>
                         <span className="text-danger">{errorMsg}</span>
                         <div className="mt-2 d-flex justify-content-center">
-                            <button className="px-5 btn btn-primary">
+                            <button className="px-5 btn btn-warning text-white">
                                 Login
                             </button>
                         </div>
@@ -117,7 +117,11 @@ const Login = () => {
             </Col>
             <Col xs={12} md={6} className="order-0 order-sm-1">
                 <div>
-                    <img src="" alt="" className="w-100" />
+                    <img
+                        src="https://i.ibb.co/7Cn6fDQ/Sign-in-pana.png"
+                        alt=""
+                        className="w-100"
+                    />
                 </div>
             </Col>
         </Row>

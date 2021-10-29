@@ -2,12 +2,13 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
+import "./Header.css";
 const Header = () => {
     const { user, handleSignOut } = useFirebase();
     // console.log(user);
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="warning" variant="dark">
             <Container>
                 <Navbar.Brand as={Link} to="/home">
                     <img
@@ -44,7 +45,9 @@ const Header = () => {
                         </Nav.Link>
                         {user.email && (
                             <Navbar.Text>
-                                <span>{user?.displayName} </span>
+                                <span className="text-white">
+                                    {user?.displayName}{" "}
+                                </span>
                                 <img
                                     className="rounded-circle"
                                     src={user.photoURL}
@@ -62,7 +65,7 @@ const Header = () => {
                         ) : (
                             <button
                                 onClick={handleSignOut}
-                                className="m-0 btn btn-dark bg-danger"
+                                className="m-0 btn btn-danger"
                             >
                                 Logout
                             </button>
