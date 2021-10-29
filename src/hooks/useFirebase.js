@@ -9,9 +9,8 @@ import {
     updateProfile,
 } from "firebase/auth";
 
+import appInitialize from "../Firebase/firebase.init";
 import { useEffect, useState } from "react";
-import initializeFirebaseApp from "../Firebase/firebase.init";
-
 import Swal from "sweetalert2";
 
 const alertRegister = () => {
@@ -22,7 +21,7 @@ const alertLogin = () => {
     Swal.fire("Success!", "Logged in Successfully!", "success");
 };
 
-initializeFirebaseApp();
+appInitialize();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});

@@ -24,15 +24,21 @@ const Header = () => {
                         <Nav.Link as={NavLink} to="/home">
                             Home
                         </Nav.Link>
-                        <Nav.Link as={NavLink} to="/myPlans">
-                            My Plans
-                        </Nav.Link>
-                        <Nav.Link as={NavLink} to="/manageAll">
-                            Manage All Plans
-                        </Nav.Link>
-                        <Nav.Link as={NavLink} to="/manageAll">
-                            Add Tour Place
-                        </Nav.Link>
+                        {user.email && (
+                            <Nav.Link as={NavLink} to="/myPlans">
+                                My Plans
+                            </Nav.Link>
+                        )}
+                        {user.email && (
+                            <Nav.Link as={NavLink} to="/manageAll">
+                                Manage All Plans
+                            </Nav.Link>
+                        )}
+                        {user.email && (
+                            <Nav.Link as={NavLink} to="/manageAll">
+                                Add Tour Place
+                            </Nav.Link>
+                        )}
                         <Nav.Link as={NavLink} to="/about">
                             About Us
                         </Nav.Link>

@@ -6,12 +6,11 @@ import Checkout from "./components/Checkout/Checkout";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 import ManageAllPlans from "./components/ManageAllPlans/ManageAllPlans";
 import MyPlans from "./components/MyPlans/MyPlans";
 import NotFound from "./components/NotFound/NotFound";
-import appInitialize from "./Firebase/firebase.init";
-
-appInitialize();
 
 function App() {
     return (
@@ -35,6 +34,12 @@ function App() {
                 </Route>
                 <Route exact path="/addPlace">
                     <AddTourPlace></AddTourPlace>
+                </Route>
+                <Route exact path="/login">
+                    <Login></Login>
+                </Route>
+                <Route exact path="/register">
+                    <Register></Register>
                 </Route>
                 <Route path="*">
                     <NotFound></NotFound>
