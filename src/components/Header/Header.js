@@ -8,19 +8,15 @@ const Header = () => {
     // console.log(user);
 
     return (
-        <Navbar
-            collapseOnSelect
-            expand="lg"
-            bg="warning"
-            variant="dark"
-            className="navbar"
-        >
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="navbar">
             <Container>
                 <Navbar.Brand as={Link} to="/home">
                     <img
                         alt=""
                         src="https://i.ibb.co/WFshhXh/adventure-vintage-logo-vector-21209180.jpg"
                         className="align-top d-inline-block"
+                        height="80"
+                        width="160"
                     />
                 </Navbar.Brand>
 
@@ -28,27 +24,41 @@ const Header = () => {
 
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto align-items-center">
-                        <Nav.Link as={NavLink} to="/home">
+                        <Nav.Link as={NavLink} to="/home" className="me-2">
                             Home
                         </Nav.Link>
                         {user.email && (
-                            <Nav.Link as={NavLink} to="/myPlans">
+                            <Nav.Link
+                                as={NavLink}
+                                to="/myPlans"
+                                className="me-2"
+                            >
                                 My Plans
                             </Nav.Link>
                         )}
                         {user.email && (
-                            <Nav.Link as={NavLink} to="/manageAll">
+                            <Nav.Link
+                                as={NavLink}
+                                to="/manageAll"
+                                className="me-2"
+                            >
                                 Manage All Plans
                             </Nav.Link>
                         )}
                         {user.email && (
-                            <Nav.Link as={NavLink} to="/manageAll">
+                            <Nav.Link
+                                as={NavLink}
+                                to="/manageAll"
+                                className="me-2"
+                            >
                                 Add Tour Place
                             </Nav.Link>
                         )}
+                    </Nav>
+                    <Nav>
                         {user.email && (
                             <Navbar.Text>
-                                <span className="text-white">
+                                <span className="text-dark">
                                     {user?.displayName}{" "}
                                 </span>
                                 <img
@@ -62,20 +72,24 @@ const Header = () => {
                         )}
 
                         {!user.email ? (
-                            <Nav.Link as={NavLink} to="/login">
+                            <Nav.Link as={NavLink} to="/login" className="mx-2">
                                 Login
                             </Nav.Link>
                         ) : (
                             <button
                                 onClick={handleSignOut}
-                                className="m-0 btn btn-danger"
+                                className="ms-2 px-3 btn btn-danger"
                             >
                                 Logout
                             </button>
                         )}
 
                         {!user.email && (
-                            <Nav.Link as={NavLink} to="/register">
+                            <Nav.Link
+                                as={NavLink}
+                                to="/register"
+                                className="mx-2"
+                            >
                                 Register
                             </Nav.Link>
                         )}

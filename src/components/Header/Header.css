@@ -1,11 +1,13 @@
+.navbar {
+    background: linear-gradient(183.41deg, #ffee02 -8.57%, #fdf257 82.96%);
+}
 .navbar a {
     color: black !important;
     font-weight: 600;
-    border-bottom: 2px hidden !important;
+    border-bottom: 2px solid #ffee02 -8.57%;
 }
 .navbar a:hover {
     color: rgb(255, 255, 255) !important;
     font-weight: 700;
-    transition: 0.26s ease-in-out;
     border-bottom: 2px solid white !important;
 }
