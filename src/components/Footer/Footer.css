@@ -1,0 +1,13 @@
+.footer {
+    background: linear-gradient(183.41deg, #f7e605 -8.57%, #faf05f 82.96%);
+}
+.list {
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+}
+.list li:hover {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+}
