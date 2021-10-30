@@ -1,16 +1,20 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import "./TourPlaces.css";
 
 const TourPlaces = () => {
     const [services, setServices] = useState();
-
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
+        setLoading(true);
         fetch("http://localhost:5000/services")
             .then((res) => res.json())
-            .then((data) => setServices(data));
+            .then((data) => {
+                setServices(data);
+                setLoading(false);
+            });
     }, []);
 
     console.log(services);
@@ -25,41 +29,51 @@ const TourPlaces = () => {
                 and pack the things for the journey you dream about. See our
                 recommendations.
             </p>
-            <Container>
-                <Row className="g-4 mb-5">
-                    {services?.map((service) => (
-                        <Col
-                            key={service._id}
-                            xs={12}
-                            md={6}
-                            lg={4}
-                            className="h-100"
-                        >
-                            <div className="tour-place">
-                                <div className="tour-img">
-                                    <img
-                                        src={service.imgURL}
-                                        alt=""
-                                        className="w-100"
-                                    />
+            {loading ? (
+                <div className="d-flex justify-content-center">
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                </div>
+            ) : (
+                <Container>
+                    <Row className="g-4 mb-5">
+                        {services?.map((service) => (
+                            <Col
+                                key={service._id}
+                                xs={12}
+                                md={6}
+                                lg={4}
+                                className="h-100"
+                            >
+                                <div className="tour-place">
+                                    <div className="tour-img">
+                                        <img
+                                            src={service.imgURL}
+                                            alt=""
+                                            className="w-100"
+                                        />
+                                    </div>
+                                    <div className="tour-desc">
+                                        <h1 className="text-warning fw-bold">
+                                            {service.name}
+                                        </h1>
+                                        <p className="text-white">
+                                            {service.desc}
+                                        </p>
+                                        <p className="fs-2 fw-bold text-white">
+                                            Price: ${service.price}
+                                        </p>
+                                    </div>
+                                    <button className="book-now-btn btn btn-warning text-white">
+                                        Book Now
+                                    </button>
                                 </div>
-                                <div className="tour-desc">
-                                    <h1 className="text-warning fw-bold">
-                                        {service.name}
-                                    </h1>
-                                    <p className="text-white">{service.desc}</p>
-                                    <p className="fs-2 fw-bold text-white">
-                                        Price: ${service.price}
-                                    </p>
-                                </div>
-                                <button className="book-now-btn btn btn-warning text-white">
-                                    Book Now
-                                </button>
-                            </div>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            )}
         </div>
     );
 };

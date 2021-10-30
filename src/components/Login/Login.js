@@ -5,12 +5,12 @@ import React, { useEffect, useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import useFirebase from "../../hooks/useFirebase";
+import useAuth from "../../hooks/useAuth";
 import "./Login.css";
 
 const Login = () => {
     const { error, handleLoginUsingEmailPassword, handleGoogleSignIn } =
-        useFirebase();
+        useAuth();
 
     const [errorMsg, setErrorMsg] = useState("");
     useEffect(() => {
