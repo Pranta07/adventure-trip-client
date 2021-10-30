@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 const ManageAllPlans = () => {
     const [plans, setPlans] = useState([]);
     const [isDelete, setIsDelete] = useState(false);
+    const [status, setStatus] = useState(false);
+
     useEffect(() => {
         fetch(`https://limitless-anchorage-56035.herokuapp.com/managePlans`)
             .then((res) => res.json())
@@ -14,7 +16,7 @@ const ManageAllPlans = () => {
                 setPlans(data);
                 console.log(data);
             });
-    }, [isDelete]);
+    }, [isDelete, status]);
 
     const handleDelete = (id) => {
         setIsDelete(false);
@@ -41,6 +43,28 @@ const ManageAllPlans = () => {
         }
     };
 
+    const updateStatus = (id) => {
+        setStatus(false);
+        fetch(`http://localhost:5000/update/${id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({}),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.modifiedCount) {
+                    setStatus(true);
+                    Swal.fire(
+                        "Success!",
+                        "Status Updated Successfully!",
+                        "success"
+                    );
+                }
+            });
+    };
+
     return (
         <div>
             <h1 className="text-center text-warning fw-bold fs-1 my-4">
@@ -60,7 +84,12 @@ const ManageAllPlans = () => {
                         </h4>
                         <h4 className="text-dark">User: {plan.name}</h4>
                         <p className="m-0">Status : {plan.status}</p>
-                        <button className="btn btn-success">Approved</button>
+                        <button
+                            onClick={() => updateStatus(plan._id)}
+                            className="btn btn-success"
+                        >
+                            Approved
+                        </button>
                         <button
                             onClick={() => handleDelete(plan._id)}
                             className="btn btn-danger"
