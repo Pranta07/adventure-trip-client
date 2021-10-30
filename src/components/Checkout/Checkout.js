@@ -42,7 +42,7 @@ const Checkout = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                if (result.acknowledged) {
+                if (result.insertedId) {
                     Swal.fire(
                         "Success!",
                         "Tour Plan Successfully Booked!",
