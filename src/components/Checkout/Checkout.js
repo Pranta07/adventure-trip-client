@@ -28,6 +28,10 @@ const Checkout = () => {
 
     const onSubmit = (data) => {
         data.serviceId = id;
+        data.img = service.imgURL;
+        data.serviceName = service.name;
+        data.price = service.price;
+        data.status = "Pending";
         console.log(data);
         fetch("http://localhost:5000/takeOrders", {
             method: "POST",

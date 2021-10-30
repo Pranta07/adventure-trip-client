@@ -39,7 +39,7 @@ const Header = () => {
                         {user.email && (
                             <Nav.Link
                                 as={NavLink}
-                                to="/manageAll"
+                                to="/allPlans"
                                 className="me-2"
                             >
                                 Manage All Plans
@@ -76,12 +76,14 @@ const Header = () => {
                                 Login
                             </Nav.Link>
                         ) : (
-                            <button
-                                onClick={handleSignOut}
-                                className="ms-2 px-3 btn btn-danger"
-                            >
-                                Logout
-                            </button>
+                            <Link to="/home">
+                                <button
+                                    onClick={handleSignOut}
+                                    className="ms-2 px-3 btn btn-danger"
+                                >
+                                    Logout
+                                </button>
+                            </Link>
                         )}
 
                         {!user.email && (
