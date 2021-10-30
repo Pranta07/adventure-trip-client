@@ -1,5 +1,7 @@
 import React from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import "./Checkout.css";
 
@@ -11,6 +13,13 @@ const Checkout = () => {
         formState: { errors },
     } = useForm();
     const { user } = useAuth();
+
+    const { id } = useParams();
+    useEffect(() => {
+        fetch(`http://localhost:5000/service/${id}`)
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+    }, [id]);
 
     const onSubmit = (data) => {
         console.log(data);
