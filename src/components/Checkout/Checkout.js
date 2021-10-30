@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./Checkout.css";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
     const [service, setService] = useState({});
@@ -27,8 +27,29 @@ const Checkout = () => {
     }, [id]);
 
     const onSubmit = (data) => {
+        data.serviceId = id;
         console.log(data);
+        fetch("http://localhost:5000/takeOrders", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.acknowledged) {
+                    Swal.fire(
+                        "Success!",
+                        "Tour Plan Successfully Booked!",
+                        "success"
+                    );
+                    console.log(result);
+                    reset();
+                }
+            });
     };
+
     return (
         <Container>
             <Row className="g-5 my-5">
