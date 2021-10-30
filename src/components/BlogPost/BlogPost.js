@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 
 const BlogPost = () => {
     return (
@@ -25,7 +27,9 @@ const BlogPost = () => {
                                 Discover New Oceans By Losing Sight Of The Shore
                             </Card.Title>
                         </Card.Body>
-                        <Card.Footer>May 5, 2020</Card.Footer>
+                        <Card.Footer>
+                            <FontAwesomeIcon icon={faCalendarAlt} /> May 5, 2020
+                        </Card.Footer>
                     </Card>
                 </Col>
                 <Col>
@@ -39,7 +43,10 @@ const BlogPost = () => {
                                 Travel Makes One Modest And Opened To Ideas
                             </Card.Title>
                         </Card.Body>
-                        <Card.Footer>July 12, 2020</Card.Footer>
+                        <Card.Footer>
+                            <FontAwesomeIcon icon={faCalendarAlt} /> July 12,
+                            2020
+                        </Card.Footer>
                     </Card>
                 </Col>
                 <Col>
@@ -53,7 +60,10 @@ const BlogPost = () => {
                                 A Lot Of Traveling Turns You Into A Storyteller
                             </Card.Title>
                         </Card.Body>
-                        <Card.Footer>January 5, 2020</Card.Footer>
+                        <Card.Footer>
+                            <FontAwesomeIcon icon={faCalendarAlt} /> January 5,
+                            2020
+                        </Card.Footer>
                     </Card>
                 </Col>
                 <Col>
@@ -67,7 +77,10 @@ const BlogPost = () => {
                                 Journeys Are Best Measured In New Friends
                             </Card.Title>
                         </Card.Body>
-                        <Card.Footer>February 1, 2021</Card.Footer>
+                        <Card.Footer>
+                            <FontAwesomeIcon icon={faCalendarAlt} /> February 1,
+                            2021
+                        </Card.Footer>
                     </Card>
                 </Col>
             </Row>
