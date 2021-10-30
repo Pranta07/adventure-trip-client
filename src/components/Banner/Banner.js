@@ -15,8 +15,9 @@ const Banner = () => {
                         Mountains Adventures
                     </h3>
                     <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
+                        Some mountains only require a good pair of shoes. Others
+                        require an entire team to conquer. Knowing which is
+                        which is the key to success.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -28,10 +29,12 @@ const Banner = () => {
                     height="600"
                 />
                 <Carousel.Caption>
-                    <h3 className="text-warning fs-1 fw-bold">Second label</h3>
+                    <h3 className="text-warning fs-1 fw-bold">
+                        Explore The World
+                    </h3>
                     <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
+                        Mountains teach that not everything in this world can be
+                        rationally explained.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -44,11 +47,12 @@ const Banner = () => {
                 />
                 <Carousel.Caption>
                     <h3 className="text-warning fs-1 fw-bold">
-                        Third slide label
+                        Adventure Everywhere You Go
                     </h3>
                     <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
+                        Keep close to Nature’s heart… and break clear away, once
+                        in awhile, and climb a mountain or spend a week in the
+                        woods. Wash your spirit clean.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
