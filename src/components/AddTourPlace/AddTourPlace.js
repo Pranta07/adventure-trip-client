@@ -14,7 +14,7 @@ const AddTourPlace = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        fetch("http://localhost:5000/addNewPlans", {
+        fetch("https://limitless-anchorage-56035.herokuapp.com/addNewPlans", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -11,7 +11,9 @@ const MyPlans = () => {
     const [isDelete, setIsDelete] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myPlans/${user?.email}`)
+        fetch(
+            `https://limitless-anchorage-56035.herokuapp.com/myPlans/${user?.email}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setOrders(data);
@@ -23,9 +25,12 @@ const MyPlans = () => {
         setIsDelete(false);
         const proceed = window.confirm("Are you sure?");
         if (proceed) {
-            fetch(`http://localhost:5000/remove/${id}`, {
-                method: "DELETE",
-            })
+            fetch(
+                `https://limitless-anchorage-56035.herokuapp.com/remove/${id}`,
+                {
+                    method: "DELETE",
+                }
+            )
                 .then((res) => res.json())
                 .then((result) => {
                     if (result.deletedCount) {

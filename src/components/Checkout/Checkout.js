@@ -21,7 +21,7 @@ const Checkout = () => {
 
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${id}`)
+        fetch(`https://limitless-anchorage-56035.herokuapp.com/service/${id}`)
             .then((res) => res.json())
             .then((data) => setService(data));
     }, [id]);
@@ -33,7 +33,7 @@ const Checkout = () => {
         data.price = service.price;
         data.status = "Pending";
         console.log(data);
-        fetch("http://localhost:5000/takeOrders", {
+        fetch("https://limitless-anchorage-56035.herokuapp.com/takeOrders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

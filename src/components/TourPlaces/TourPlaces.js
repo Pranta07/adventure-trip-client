@@ -10,7 +10,7 @@ const TourPlaces = () => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(true);
-        fetch("http://localhost:5000/services")
+        fetch("https://limitless-anchorage-56035.herokuapp.com/services")
             .then((res) => res.json())
             .then((data) => {
                 setServices(data);
