@@ -18,7 +18,7 @@ const TourPlaces = () => {
             });
     }, []);
 
-    console.log(services);
+    // console.log(services);
     return (
         <div>
             <h1 className="text-warning fw-bold text-center mt-4">
