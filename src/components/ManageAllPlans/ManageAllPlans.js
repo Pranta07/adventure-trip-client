@@ -45,7 +45,7 @@ const ManageAllPlans = () => {
 
     const updateStatus = (id) => {
         setStatus(false);
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://limitless-anchorage-56035.herokuapp.com/update/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
