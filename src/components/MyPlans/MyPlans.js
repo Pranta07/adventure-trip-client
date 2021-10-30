@@ -8,6 +8,7 @@ import useAuth from "../../hooks/useAuth";
 const MyPlans = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
+    const [isDelete, setIsDelete] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myPlans/${user?.email}`)
@@ -16,9 +17,10 @@ const MyPlans = () => {
                 setOrders(data);
                 console.log(data);
             });
-    }, []);
+    }, [isDelete]);
 
     const handleDelete = (id) => {
+        setIsDelete(false);
         const proceed = window.confirm("Are you sure?");
         if (proceed) {
             fetch(`http://localhost:5000/remove/${id}`, {
@@ -27,10 +29,11 @@ const MyPlans = () => {
                 .then((res) => res.json())
                 .then((result) => {
                     if (result.deletedCount) {
+                        setIsDelete(true);
                         console.log(result);
                         Swal.fire(
                             "Success!",
-                            "Registered Successfully!",
+                            "Deleted Successfully!",
                             "success"
                         );
                     }
@@ -40,9 +43,15 @@ const MyPlans = () => {
 
     return (
         <div>
-            <h1 className="text-center text-warning fw-bold fs-1 my-4">
-                Tour Places You Booked
-            </h1>
+            {orders.length ? (
+                <h1 className="text-center text-warning fw-bold fs-1 my-4">
+                    Tour Places You Booked
+                </h1>
+            ) : (
+                <h1 className="text-center text-warning fw-bold fs-1 my-4">
+                    Currently You Have No Plans!
+                </h1>
+            )}
             <Container>
                 {orders.map((order) => (
                     <div

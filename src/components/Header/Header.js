@@ -48,7 +48,7 @@ const Header = () => {
                         {user.email && (
                             <Nav.Link
                                 as={NavLink}
-                                to="/manageAll"
+                                to="/addNewPlan"
                                 className="me-2"
                             >
                                 Add Tour Place

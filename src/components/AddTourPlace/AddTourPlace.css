@@ -1,0 +1,23 @@
+.add-new-plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
+.add-new-plan input,
+textarea {
+    margin: 15px auto;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 50%;
+}
+.add-new-plan span {
+    margin: 0px auto;
+    padding: 5px;
+    border-radius: 5px;
+    width: 50%;
+}
+.error {
+    color: red;
+}
