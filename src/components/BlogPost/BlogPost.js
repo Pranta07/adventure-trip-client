@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
-
+import "./BlogPost.css";
 const BlogPost = () => {
     return (
         <Container>
@@ -19,6 +19,7 @@ const BlogPost = () => {
                 <Col>
                     <Card>
                         <Card.Img
+                            className="card-img"
                             variant="top"
                             src="https://i.ibb.co/jf8kmnK/blog-post-2-m.jpg"
                         />
@@ -35,6 +36,7 @@ const BlogPost = () => {
                 <Col>
                     <Card>
                         <Card.Img
+                            className="card-img"
                             variant="top"
                             src="https://i.ibb.co/BPvpyN9/blog-post-5-m.jpg"
                         />
@@ -52,6 +54,7 @@ const BlogPost = () => {
                 <Col>
                     <Card>
                         <Card.Img
+                            className="card-img"
                             variant="top"
                             src="https://i.ibb.co/fM2N69F/blog-post-4-m.jpg"
                         />
@@ -69,6 +72,7 @@ const BlogPost = () => {
                 <Col>
                     <Card>
                         <Card.Img
+                            className="card-img"
                             variant="top"
                             src="https://i.ibb.co/sbzDZtd/blog-post-1-m.jpg"
                         />
