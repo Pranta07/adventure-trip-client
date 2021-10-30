@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./TourPlaces.css";
 
 const TourPlaces = () => {
@@ -65,9 +66,11 @@ const TourPlaces = () => {
                                             Price: ${service.price}
                                         </p>
                                     </div>
-                                    <button className="book-now-btn btn btn-warning text-white">
-                                        Book Now
-                                    </button>
+                                    <Link to={`/checkout/${service._id}`}>
+                                        <button className="book-now-btn btn btn-warning text-white">
+                                            Book Now
+                                        </button>
+                                    </Link>
                                 </div>
                             </Col>
                         ))}

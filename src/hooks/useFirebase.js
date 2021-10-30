@@ -75,18 +75,11 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         setIsLoading(true);
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                setUser(result.user);
-                setError("");
-                alertLogin();
-            })
+        return signInWithPopup(auth, googleProvider)
             .catch((error) => {
                 setError(error.message);
             })
-            .finally(() => {
-                setIsLoading(false);
-            });
+            .finally(() => setIsLoading(false));
     };
 
     useEffect(() => {

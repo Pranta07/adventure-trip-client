@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Col, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./Login.css";
 
@@ -13,6 +13,7 @@ const Login = () => {
         useAuth();
 
     const [errorMsg, setErrorMsg] = useState("");
+
     useEffect(() => {
         setErrorMsg(error);
         const timer = setTimeout(() => {
@@ -20,6 +21,17 @@ const Login = () => {
             return () => clearTimeout(timer);
         }, 3000);
     }, [error]);
+
+    const location = useLocation();
+    // console.log(location);
+    const pathName = location?.state?.from?.pathname || "/home";
+    const history = useHistory();
+
+    const handleRedirectsAfterSignsIn = () => {
+        handleGoogleSignIn().then((result) => {
+            history.push(pathName);
+        });
+    };
 
     const {
         register,
@@ -100,7 +112,7 @@ const Login = () => {
                     <div className="mt-3 text-center">
                         <p>Or Sign In Using</p>
                         <img
-                            onClick={handleGoogleSignIn}
+                            onClick={handleRedirectsAfterSignsIn}
                             src="https://i.ibb.co/d7hrH3F/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
                             alt=""
                             width="30"

@@ -1,0 +1,18 @@
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 150px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.checkout-form input {
+    margin: 15px auto;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 300px;
+}
+.error {
+    color: red;
+}

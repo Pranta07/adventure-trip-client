@@ -12,6 +12,7 @@ import ManageAllPlans from "./components/ManageAllPlans/ManageAllPlans";
 import MyPlans from "./components/MyPlans/MyPlans";
 import NotFound from "./components/NotFound/NotFound";
 import AuthProvider from "./context/AuthProvider";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function App() {
     return (
@@ -25,9 +26,9 @@ function App() {
                     <Route exact path="/home">
                         <Home></Home>
                     </Route>
-                    <Route exact path="/checkout/:id">
+                    <PrivateRoute exact path="/checkout/:id">
                         <Checkout></Checkout>
-                    </Route>
+                    </PrivateRoute>
                     <Route exact path="/myPlans">
                         <MyPlans></MyPlans>
                     </Route>
