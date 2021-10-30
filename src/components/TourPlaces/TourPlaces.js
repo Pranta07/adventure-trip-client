@@ -31,8 +31,8 @@ const TourPlaces = () => {
                 recommendations.
             </p>
             {loading ? (
-                <div className="d-flex justify-content-center">
-                    <Spinner animation="border" role="status">
+                <div className="d-flex justify-content-center mb-5">
+                    <Spinner variant="warning" animation="border" role="status">
                         <span className="visually-hidden">Loading...</span>
                     </Spinner>
                 </div>

@@ -10,7 +10,7 @@ const Checkout = () => {
         reset,
         formState: { errors },
     } = useForm();
-    const { user, isLoading } = useAuth();
+    const { user } = useAuth();
 
     const onSubmit = (data) => {
         console.log(data);
@@ -38,12 +38,16 @@ const Checkout = () => {
                     {...register("city")}
                 />
                 <input
-                    placeholder="phone number"
+                    placeholder="Phone Number"
                     defaultValue=""
                     {...register("phone")}
                 />
 
-                <input type="submit" />
+                <input
+                    type="submit"
+                    value="Checkout"
+                    className="btn btn-warning text-white"
+                />
             </form>
         </div>
     );
