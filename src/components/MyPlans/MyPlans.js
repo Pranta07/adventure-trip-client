@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 
@@ -9,15 +9,18 @@ const MyPlans = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     const [isDelete, setIsDelete] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         fetch(
             `https://limitless-anchorage-56035.herokuapp.com/myPlans/${user?.email}`
         )
             .then((res) => res.json())
             .then((data) => {
                 setOrders(data);
-                console.log(data);
+                // console.log(data);
+                setLoading(false);
             });
     }, [isDelete]);
 
@@ -45,6 +48,16 @@ const MyPlans = () => {
                 });
         }
     };
+
+    if (loading) {
+        return (
+            <div className="d-flex justify-content-center my-5">
+                <Spinner variant="warning" animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        );
+    }
 
     return (
         <div>
