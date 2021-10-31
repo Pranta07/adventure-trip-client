@@ -4,7 +4,11 @@ import { useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { faCheckCircle, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import {
+    faExclamationCircle,
+    faUserAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ManageAllPlans = () => {
     const [plans, setPlans] = useState([]);
@@ -97,14 +101,18 @@ const ManageAllPlans = () => {
                         <h4 className="text-warning fw-bold">
                             {plan.serviceName}
                         </h4>
-                        <h4 className="text-dark">User: {plan.name}</h4>
+                        <h4 className="text-dark">
+                            <FontAwesomeIcon icon={faUserAlt} /> {plan.name}
+                        </h4>
                         {plan.status === "Approved" ? (
                             <p className="py-1 m-0 text-success">
-                                Status : {plan.status}
+                                <FontAwesomeIcon icon={faCheckCircle} />{" "}
+                                {plan.status}
                             </p>
                         ) : (
                             <p className="py-1 m-0 text-warning">
-                                Status : {plan.status}
+                                <FontAwesomeIcon icon={faExclamationCircle} />{" "}
+                                {plan.status}
                             </p>
                         )}
                         <div>

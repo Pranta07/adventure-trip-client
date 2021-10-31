@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import "./MyPlans.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { faCheckCircle, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 const MyPlans = () => {
     const { user } = useAuth();
@@ -93,11 +94,13 @@ const MyPlans = () => {
                         <h4 className="text-warning fw-bold">${order.price}</h4>
                         {order.status === "Approved" ? (
                             <p className="py-1 m-0 text-success">
-                                Status : {order.status}
+                                <FontAwesomeIcon icon={faCheckCircle} />{" "}
+                                {order.status}
                             </p>
                         ) : (
                             <p className="py-1 m-0 text-warning">
-                                Status : {order.status}
+                                <FontAwesomeIcon icon={faExclamationCircle} />{" "}
+                                {order.status}
                             </p>
                         )}
                         <button
