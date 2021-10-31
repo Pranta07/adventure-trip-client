@@ -101,9 +101,9 @@ const ManageAllPlans = () => {
                         <h4 className="text-warning fw-bold">
                             {plan.serviceName}
                         </h4>
-                        <h4 className="text-dark">
+                        <h5 className="text-dark">
                             <FontAwesomeIcon icon={faUserAlt} /> {plan.name}
-                        </h4>
+                        </h5>
                         {plan.status === "Approved" ? (
                             <p className="py-1 m-0 text-success">
                                 <FontAwesomeIcon icon={faCheckCircle} />{" "}
