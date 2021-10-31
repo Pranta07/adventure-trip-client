@@ -1,0 +1,7 @@
+@media only screen and (max-width: 768px) {
+    .single-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

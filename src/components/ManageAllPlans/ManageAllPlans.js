@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 
 const ManageAllPlans = () => {
     const [plans, setPlans] = useState([]);
@@ -70,7 +72,7 @@ const ManageAllPlans = () => {
 
     if (loading) {
         return (
-            <div className="d-flex justify-content-center my-5">
+            <div className="my-5 d-flex justify-content-center">
                 <Spinner variant="warning" animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
@@ -80,14 +82,14 @@ const ManageAllPlans = () => {
 
     return (
         <div>
-            <h1 className="text-center text-warning fw-bold fs-1 my-4">
+            <h1 className="my-4 text-center text-warning fw-bold fs-1">
                 Manage all plans here
             </h1>
             <Container>
                 {plans?.map((plan) => (
                     <div
                         key={plan._id}
-                        className="bg-light single-tour d-flex justify-content-evenly align-items-center shadow rounded p-3 my-3"
+                        className="p-3 my-3 rounded shadow bg-light single-item d-flex justify-content-evenly align-items-center"
                     >
                         <div>
                             <img src={plan.img} alt="" height="80" width="50" />
@@ -96,19 +98,29 @@ const ManageAllPlans = () => {
                             {plan.serviceName}
                         </h4>
                         <h4 className="text-dark">User: {plan.name}</h4>
-                        <p className="m-0">Status : {plan.status}</p>
-                        <button
-                            onClick={() => updateStatus(plan._id)}
-                            className="btn btn-success"
-                        >
-                            Approved
-                        </button>
-                        <button
-                            onClick={() => handleDelete(plan._id)}
-                            className="btn btn-danger"
-                        >
-                            X
-                        </button>
+                        {plan.status === "Approved" ? (
+                            <p className="py-1 m-0 text-success">
+                                Status : {plan.status}
+                            </p>
+                        ) : (
+                            <p className="py-1 m-0 text-warning">
+                                Status : {plan.status}
+                            </p>
+                        )}
+                        <div>
+                            <button
+                                onClick={() => updateStatus(plan._id)}
+                                className="mx-2 btn btn-success"
+                            >
+                                Approved
+                            </button>
+                            <button
+                                onClick={() => handleDelete(plan._id)}
+                                className="btn btn-danger"
+                            >
+                                <FontAwesomeIcon icon={faTrashAlt} />
+                            </button>
+                        </div>
                     </div>
                 ))}
             </Container>

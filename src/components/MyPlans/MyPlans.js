@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
+import "./MyPlans.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 
 const MyPlans = () => {
     const { user } = useAuth();
@@ -51,7 +54,7 @@ const MyPlans = () => {
 
     if (loading) {
         return (
-            <div className="d-flex justify-content-center my-5">
+            <div className="my-5 d-flex justify-content-center">
                 <Spinner variant="warning" animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
@@ -62,11 +65,11 @@ const MyPlans = () => {
     return (
         <div>
             {orders.length ? (
-                <h1 className="text-center text-warning fw-bold fs-1 my-4">
+                <h1 className="my-4 text-center text-warning fw-bold fs-1">
                     Tour Places You Booked
                 </h1>
             ) : (
-                <h1 className="text-center text-warning fw-bold fs-1 my-4">
+                <h1 className="my-4 text-center text-warning fw-bold fs-1">
                     Currently You Have No Plans!
                 </h1>
             )}
@@ -74,7 +77,7 @@ const MyPlans = () => {
                 {orders.map((order) => (
                     <div
                         key={order._id}
-                        className="bg-light single-tour d-flex justify-content-evenly align-items-center shadow rounded p-3 my-3"
+                        className="p-3 my-3 rounded shadow single-item bg-light d-md-flex justify-content-md-evenly align-items-center"
                     >
                         <div>
                             <img
@@ -88,12 +91,20 @@ const MyPlans = () => {
                             {order.serviceName}
                         </h4>
                         <h4 className="text-warning fw-bold">${order.price}</h4>
-                        <p className="m-0">Status : {order.status}</p>
+                        {order.status === "Approved" ? (
+                            <p className="py-1 m-0 text-success">
+                                Status : {order.status}
+                            </p>
+                        ) : (
+                            <p className="py-1 m-0 text-warning">
+                                Status : {order.status}
+                            </p>
+                        )}
                         <button
                             onClick={() => handleDelete(order._id)}
                             className="btn btn-danger"
                         >
-                            X
+                            <FontAwesomeIcon icon={faTrashAlt} />
                         </button>
                     </div>
                 ))}
