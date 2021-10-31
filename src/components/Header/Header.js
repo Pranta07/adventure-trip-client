@@ -55,7 +55,7 @@ const Header = () => {
                             </Nav.Link>
                         )}
                     </Nav>
-                    <Nav>
+                    <Nav className="align-items-center">
                         {user.email && (
                             <Navbar.Text>
                                 <span className="text-dark">
@@ -79,7 +79,7 @@ const Header = () => {
                             <Link to="/home">
                                 <button
                                     onClick={handleSignOut}
-                                    className="ms-2 px-3 btn btn-danger"
+                                    className="px-3 ms-2 btn btn-danger"
                                 >
                                     Logout
                                 </button>
